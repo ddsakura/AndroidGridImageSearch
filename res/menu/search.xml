@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cire.gridimagesearch.SearchActivity" >
+
+    <item
+        android:id="@+id/action_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="10"
+        android:showAsAction="collapseActionView|ifRoom"
+        android:title="search_title"/>
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_setting"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_settings"/>
+
+</menu>

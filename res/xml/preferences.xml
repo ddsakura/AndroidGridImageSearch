@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Settings" >
+
+    <ListPreference
+        android:defaultValue="icon"
+        android:entries="@array/imgsz"
+        android:entryValues="@array/imgsz_value"
+        android:key="imgsz"
+        android:summary="any"
+        android:title="Image Size" />
+    <ListPreference
+        android:defaultValue=""
+        android:entries="@array/imgcolor"
+        android:entryValues="@array/imgcolor_value"
+        android:key="imgcolor"
+        android:summary="any"
+        android:title="Color Filter" />
+    <ListPreference
+        android:defaultValue=""
+        android:entries="@array/imgtype"
+        android:entryValues="@array/imgtype_value"
+        android:key="imgtype"
+        android:summary="any"
+        android:title="Image Type" />
+
+    <EditTextPreference
+        android:dialogTitle="Site filter"
+        android:key="as_sitesearch"
+        android:summary="any"
+        android:title="Site filter" />
+
+</PreferenceScreen>
