@@ -4,12 +4,14 @@ package com.cire.gridimagesearch;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Build;
 import android.text.Html;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -78,11 +80,12 @@ class SearchAdapter extends ArrayAdapter<Photo> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Photo photo = getItem(position);
+        final Photo photo = getItem(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_image_result, parent, false);
             convertView.getLayoutParams().width = mScreenWidth / 3;
             convertView.getLayoutParams().height = mScreenWidth / 3;
+
         }
 
         ImageView ivImage = (ImageView)convertView.findViewById(R.id.ivImage);
@@ -90,6 +93,17 @@ class SearchAdapter extends ArrayAdapter<Photo> {
         ivImage.setImageResource(0);
         tvTitle.setText(Html.fromHtml(photo.getTitle()));
         Picasso.with(getContext()).load(photo.getTbUrl()).into(ivImage);
+        convertView.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent();
+                intent.setClass(getContext(), FullScreenActivity.class);
+                intent.putExtra("url", photo.getUrl());
+                getContext().startActivity(intent);
+            }
+        });
         return convertView;
     }
 }

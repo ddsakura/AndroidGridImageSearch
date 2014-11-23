@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PrefActivity" />
+        <activity android:name=".FullScreenActivity" />
 
         <meta-data
             android:name="android.app.searchable"
